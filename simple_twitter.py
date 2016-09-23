@@ -14,7 +14,7 @@ def notify(tweet):
 
     ms = minishift.Minishift(minishift.MCP2210Interface(vid, pid), width)
     canvas = minishift.Canvas()
-    canvas.write_text(0,tweet)
+    canvas.write_text(0,tweet+"        ")
     for i in range(0, 5):
         for slice in canvas.scroll():
             ms.update(slice)
