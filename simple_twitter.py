@@ -9,13 +9,13 @@ import keys
 
 def notify(tweet):
 
-    width = 8*3
+    width = 8*5
     vid, pid = 0x04d8, 0xf517
 
     ms = minishift.Minishift(minishift.MCP2210Interface(vid, pid), width)
     canvas = minishift.Canvas()
     canvas.write_text(0,tweet+"        ")
-    for i in range(0, 5):
+    for i in range(0, 2):
         for slice in canvas.scroll():
             ms.update(slice)
             time.sleep(0.05)
